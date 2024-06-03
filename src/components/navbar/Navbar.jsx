@@ -1,14 +1,21 @@
 import Logo from '../logo/Logo';
 import star from '../../assets/Star.png';
 
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { RxCross1 } from 'react-icons/rx';
+
 import { Link } from 'react-scroll';
 import { useState } from 'react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <>
-      <div className='sm:flex hidden justify-between sm:mx-[9%] mx-[6%]] items-center mt-[2%]'>
+      <div className='sm:flex hidden justify-between mx-[9%] items-center mt-[14%] sm:mt-[6%'>
         <div className='flex items-center gap-6'>
           <Logo />
           <div className='flex gap-7 '>
@@ -59,16 +66,16 @@ const Navbar = () => {
             Download
           </button>
         </div>
-        <img className='fixed left-[1460px] top-[60px]' src={star} alt='' />
+        <img className='fixed left-[94%] top-[60px]' src={star} alt='' />
       </div>
-      <div>
+      <div className='sm:hidden flex justify-between mx-[6%]'>
         <Logo />
         <div className='sm:hidden '>
           <button onClick={toggleSidebar} className='z-50'>
             {isOpen ? (
               <RxCross1 className='text-2xl text-cyan-600 font-extrabold' />
             ) : (
-              <img className='w-[40px]' src={burger} alt='burger menu' />
+              <GiHamburgerMenu className='text-2xl hover:text-red-500 font-extrabold' />
             )}
           </button>
         </div>
