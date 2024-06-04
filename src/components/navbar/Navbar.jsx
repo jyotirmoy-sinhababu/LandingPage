@@ -15,7 +15,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className='sm:flex hidden justify-between mx-[9%] items-center mt-[14%] sm:mt-[6%'>
+      <div className='sm:flex hidden justify-between mx-[9%] items-center mt-[4%] sm:mt-[6%'>
         <div className='flex items-center gap-6'>
           <Logo />
           <div className='flex gap-7 '>
